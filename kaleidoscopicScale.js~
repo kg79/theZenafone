@@ -1,0 +1,14 @@
+let scale = [0];
+
+for (let i = 1; i < 3; i++) {
+    scale.push(i);
+    console.log(`is is ${i}`);
+    for (let ii = scale.length-1; ii > 0; ii--) {
+	console.log(`this is i ${i}, and this is ii ${ii}`);
+    }
+    
+}
+
+
+
+console.log(scale);

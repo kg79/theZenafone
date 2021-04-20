@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+	  height:100vh;
+	  width:100vw;
+	  margin:0;
+	  display:grid;
+	  grid-template-columns:20vw 80vw;
+	  grid-template-rows:20vh 80vh;
+	  grid-template-areas:
+	      "kaleidoscope legend"
+		  "kaleidoscope interface"
+      } #kaleidoscope {
+	  background:hsl(276, 80%, 47%);
+	  grid-area:kaleidoscope;
+      } #legend {
+	  background:hsl(43, 62%, 51%);
+	  grid-area:legend;
+      } #interface {
+	  background:hsl(357, 74%, 40%);
+	  grid-area:interface;
+      }
+    </style>
+  </head>
+  <body>
+    <section id='kaleidoscope'>&nbsp;</section>
+    <section id='legend'>&nbsp;</section>
+    <section id='interface'>&nbsp;</section>
+  </body>
+  <script>
+    
+  </script>
+</html>
