@@ -2,9 +2,6 @@
 <html>
   <head>
     <script>
-      const kaleidoscope = document.getElementById('kaleidoscope');
-    const legend = document.getElementById('legend');
-    const interface = document.getElementById('interface');
     
       let belowScale = [{fraction:`${0}`, decimal:`${0}`}];
 
@@ -92,22 +89,9 @@
 
       let scale = belowScale.concat(aboveScale);
 
-      console.log(scale);
+      scale.splice(scale.length-1, 1);
 
-      let indexNode, indexText, fractionNode, fractionText, decimalNode, decimalText,
-	  frequencyNode, frequencyText;
-      
-      function render() {
-	  indexNode = document.createElement('div');
-	  indexText = document.createTextNode('index');
-	  indexNode.appendChild(indexText);
-
-	  kaleidoscope.appendChild(indexNode);
-	  
-      }
-
-
-
+   
     </script>
     <style>
       body {
@@ -123,21 +107,75 @@
       } #kaleidoscope {
 	  background:hsl(276, 80%, 47%);
 	  grid-area:kaleidoscope;
+	  overflow-y:scroll;
+	  display:grid;
+	  grid-template-columns:auto auto auto auto;
       } #legend {
 	  background:hsl(43, 62%, 51%);
 	  grid-area:legend;
       } #interface {
 	  background:hsl(357, 74%, 40%);
 	  grid-area:interface;
+      } .kalIndices, .kalFractions, .kalDecimals, .kalFrequencies {
+	  border:solid 1px black;
       }
     </style>
   </head>
   <body>
-    <section id='kaleidoscope'>&nbsp;</section>
+    <section id='kaleidoscope'></section>
     <section id='legend'>&nbsp;</section>
     <section id='interface'>&nbsp;</section>
   </body>
   <script>
+      const kaleidoscope = document.getElementById('kaleidoscope');
+    const legend = document.getElementById('legend');
+    const interface = document.getElementById('interface');
     
+       let indexNode, indexText, fractionNode, fractionText, decimalNode, decimalText,
+	  frequencyNode, frequencyText;
+      
+    function render() {
+	for (let i = 0; i < scale.length; i++) {
+	    
+	    indexNode = document.createElement('div');
+	    indexText = document.createTextNode(i);
+	    indexNode.setAttribute('class', 'kalIndices');
+	    indexNode.appendChild(indexText);
+	    
+	    fractionNode = document.createElement('div');
+	    fractionText = document.createTextNode(scale[i].fraction);
+	    fractionNode.setAttribute('class', 'kalFractions');
+	    fractionNode.appendChild(fractionText);
+
+
+	    decimalNode = document.createElement('div');
+	    decimalText = document.createTextNode(eval(scale[i].decimal).toFixed(2));
+	    decimalNode.setAttribute('class', 'kalDecimals');
+	    decimalNode.appendChild(decimalText);
+
+	    
+	    frequencyNode = document.createElement('div');
+	frequencyText = document.createTextNode(eval(432* eval(scale[i].fraction)).toFixed(2));
+	    frequencyNode.setAttribute('class', 'kalFrequencies');
+	    frequencyNode.appendChild(frequencyText);
+	    
+	    
+	    kaleidoscope.appendChild(indexNode);
+	    kaleidoscope.appendChild(fractionNode);
+	    kaleidoscope.appendChild(decimalNode);
+	    kaleidoscope.appendChild(frequencyNode);
+	    
+	}
+      }
+
+    render()
+
+    const kalIndices = document.getElementsByClassName('kalIndices');
+    const kalFractions = document.getElementsByClassName('kalFractions');
+    const kalDecimals = document.getElementsByClassName('kalDecimals');
+    const kalFrequencies = document.getElementsByClassName('kalFrequencies');
+    
+
+
   </script>
 </html>
