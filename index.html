@@ -2,7 +2,40 @@
 <html>
   <head>
     <script>
-    
+      const keyCodes = [
+
+          {'symb':'Q', 'numb':81},
+          {'symb':'W', 'numb':87},
+          {'symb':'E', 'numb':69},
+          {'symb':'R', 'numb':82},
+          {'symb':'T', 'numb':84},
+          {'symb':'Y', 'numb':89},
+          {'symb':'U', 'numb':85},
+          {'symb':'I', 'numb':73},
+          {'symb':'O', 'numb':79},
+          {'symb':'P', 'numb':80},
+	  
+          {'symb':'A', 'numb':65},
+          {'symb':'S', 'numb':83},
+          {'symb':'D', 'numb':68},
+          {'symb':'F', 'numb':70},
+          {'symb':'G', 'numb':71},
+          {'symb':'H', 'numb':72},
+          {'symb':'J', 'numb':74},
+          {'symb':'K', 'numb':75},
+          {'symb':'L', 'numb':76},
+
+          {'symb':'Z', 'numb':90},
+          {'symb':'X', 'numb':88},
+          {'symb':'C', 'numb':67},
+          {'symb':'V', 'numb':86},
+          {'symb':'B', 'numb':66},
+          {'symb':'N', 'numb':78},
+          {'symb':'M', 'numb':77},
+
+
+      ];
+
       let belowScale = [{fraction:`${0}`, decimal:`${0}`}];
 
 
@@ -91,7 +124,7 @@
 
       scale.splice(scale.length-1, 1);
 
-   
+      
     </script>
     <style>
       body {
@@ -114,26 +147,252 @@
 	  background:hsl(43, 62%, 51%);
 	  grid-area:legend;
       } #interface {
-	  background:hsl(357, 74%, 40%);
-	  grid-area:interface;
+	  /* background:hsl(357, 74%, 40%); */
+	   
       } .kalIndices, .kalFractions, .kalDecimals, .kalFrequencies {
 	  border:solid 1px black;
+      } input {
+	  width:3em;
+      } .faces {
+	  background:hsl(180, 85%, 31%);
+		width:4em;
+		border:solid 2px white;
+      } .faceLetters, .faceFractions, .faceDecimals, .faceFrequencies, .faceIndices {
+	  text-align:center;
+      } .rows {
+	  display:flex;
+	  justify-content:space-around;
+	  margin-top:1vh;
       }
     </style>
   </head>
   <body>
     <section id='kaleidoscope'></section>
-    <section id='legend'>&nbsp;</section>
-    <section id='interface'>&nbsp;</section>
+    <section id='legend'>
+      <button id='initialize'>initialize</button><br/>
+      fundamental: <input id='fundamental' type='number' value='432'><br/>
+      <button id='automap'>automap</button>
+    </section>
+    <section id='interface'>
+      
+      <section class='rows'>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+      </section>
+      <section class='rows'>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+</section>
+      <section class='rows'>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+        <article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+	<article class='faces'>
+	  <div class='faceLetters'></div>
+	  <div class='faceFractions'></div>
+	  <div class='faceDecimals'></div>
+	  <div class='faceFrequencies'></div>
+	  <div class='faceIndices'></div>
+	</article>
+      </section>
+
+    </section>
   </body>
   <script>
-      const kaleidoscope = document.getElementById('kaleidoscope');
+    const faces = document.getElementsByClassName('faces');
+    const faceLetters = document.getElementsByClassName('faceLetters');
+    const faceFractions = document.getElementsByClassName('faceFractions');
+    const faceDecimals = document.getElementsByClassName('faceDecimals');
+    const faceFrequencies = document.getElementsByClassName('faceFrequencies');
+    const faceIndices = document.getElementsByClassName('faceIndices');
+
+    for (let i = 0; i < faceLetters.length; i++) {
+	faceLetters[i].innerText = keyCodes[i].symb;
+	faceFractions[i].innerText = '.';
+	faceDecimals[i].innerText = '.';
+	faceFrequencies[i].innerText = '.';
+	faceIndices[i].innerText = '.';	
+    }
+
+    
+    const fundamental = document.getElementById('fundamental');
+    const automap = document.getElementById('automap');
+    const initialize = document.getElementById('initialize');
+    const kaleidoscope = document.getElementById('kaleidoscope');
     const legend = document.getElementById('legend');
     const interface = document.getElementById('interface');
     
-       let indexNode, indexText, fractionNode, fractionText, decimalNode, decimalText,
-	  frequencyNode, frequencyText;
-      
+    let indexNode, indexText, fractionNode, fractionText, decimalNode, decimalText,
+	frequencyNode, frequencyText;
+    
     function render() {
 	for (let i = 0; i < scale.length; i++) {
 	    
@@ -155,7 +414,7 @@
 
 	    
 	    frequencyNode = document.createElement('div');
-	frequencyText = document.createTextNode(eval(432* eval(scale[i].fraction)).toFixed(2));
+	    frequencyText = document.createTextNode(eval(432* eval(scale[i].fraction)).toFixed(2));
 	    frequencyNode.setAttribute('class', 'kalFrequencies');
 	    frequencyNode.appendChild(frequencyText);
 	    
@@ -166,7 +425,7 @@
 	    kaleidoscope.appendChild(frequencyNode);
 	    
 	}
-      }
+    }
 
     render()
 
@@ -175,7 +434,274 @@
     const kalDecimals = document.getElementsByClassName('kalDecimals');
     const kalFrequencies = document.getElementsByClassName('kalFrequencies');
     
+    fundamental.addEventListener('change', () => {
+	for (let i = 0; i < kalFrequencies.length; i++) {
+	    kalFrequencies[i].innerText = (eval(kalFractions[i].textContent)
+					   *fundamental.value).toFixed(2);
+	}
+    });
+
+    automap.addEventListener('click', () => {
+	//let degree = eval(scale.length/26).toFixed(1).split('.')[0];
+	let degree = Math.round(scale.length/26);
+	let kalCounter = 0;
+	for (let i = 0; i < 26; i++) {
+	    faceFractions[i].textContent = kalFractions[kalCounter].textContent;
+	    faceDecimals[i].textContent = kalDecimals[kalCounter].textContent;
+	    faceFrequencies[i].textContent = kalFrequencies[kalCounter].textContent;
+	    faceIndices[i].textContent = kalIndices[kalCounter].textContent;
+	    kalCounter += eval(degree);
+	}
+    });
+
+	let atx;
+
+	initialize.onclick = () => atx = new AudioContext();
 
 
+        class Music {
+            constructor(name, volume, index) {
+                this.name = name;
+                this.volume = volume;
+                this.index = index;
+                this.playing = false;
+            }
+            on() {
+                if (this.playing === false) {
+
+                    this.name = atx.createOscillator();
+                    this.volume = atx.createGain();
+
+					this.name.frequency.value = fundamental.value* eval(faceFractions[this.index].textContent);
+                    this.name.connect(this.volume).connect(atx.destination);
+                    this.name.start(0);
+                    this.volume.gain.value = .333;
+
+                    this.playing = true;
+
+					faces[this.index].style.border = 'solid 2px black';
+
+                }
+            }
+            off() {
+                this.name.stop(0);
+                this.playing = false;
+				faces[this.index].style.border = 'solid 2px white';
+            }
+		}
+
+		let name0, name1, name2, name3, name4, name5, name6, name7, name8, name9, name10, name11, name12, name13, name14, name15, name16, name17, name18, name19, name20, name21, name22, name23, name24, name25;
+
+let volume0, volume1, volume2, volume3, volume4, volume5, volume6, volume7, volume8, volume9, volume10, volume11, volume12, volume13, volume14, volume15, volume16, volume17, volume18, volume19, volume20, volume21, volume22, volume23, volume24, volume25;
+
+let notes = [
+
+new Music(name0, volume0, 0),
+new Music(name1, volume1, 1),
+new Music(name2, volume2, 2),
+new Music(name3, volume3, 3),
+new Music(name4, volume4, 4),
+new Music(name5, volume5, 5),
+new Music(name6, volume6, 6),
+new Music(name7, volume7, 7),
+new Music(name8, volume8, 8),
+new Music(name9, volume9, 9),
+new Music(name10, volume10, 10),
+new Music(name11, volume11, 11),
+new Music(name12, volume12, 12),
+new Music(name13, volume13, 13),
+new Music(name14, volume14, 14),
+new Music(name15, volume15, 15),
+new Music(name16, volume16, 16),
+new Music(name17, volume17, 17),
+new Music(name18, volume18, 18),
+new Music(name19, volume19, 19),
+new Music(name20, volume20, 20),
+new Music(name21, volume21, 21),
+new Music(name22, volume22, 22),
+new Music(name23, volume23, 23),
+new Music(name24, volume24, 24),
+new Music(name25, volume25, 25),
+
+];
+
+window.addEventListener('keydown', e => {
+    switch (e.keyCode) {
+
+        case keyCodes[0].numb:
+        notes[0].on();
+        break;
+        case keyCodes[1].numb:
+        notes[1].on();
+        break;
+        case keyCodes[2].numb:
+        notes[2].on();
+        break;
+        case keyCodes[3].numb:
+        notes[3].on();
+        break;
+        case keyCodes[4].numb:
+        notes[4].on();
+        break;
+        case keyCodes[5].numb:
+        notes[5].on();
+        break;
+        case keyCodes[6].numb:
+        notes[6].on();
+        break;
+        case keyCodes[7].numb:
+        notes[7].on();
+        break;
+        case keyCodes[8].numb:
+        notes[8].on();
+        break;
+        case keyCodes[9].numb:
+        notes[9].on();
+        break;
+        case keyCodes[10].numb:
+        notes[10].on();
+        break;
+        case keyCodes[11].numb:
+        notes[11].on();
+        break;
+        case keyCodes[12].numb:
+        notes[12].on();
+        break;
+        case keyCodes[13].numb:
+        notes[13].on();
+        break;
+        case keyCodes[14].numb:
+        notes[14].on();
+        break;
+        case keyCodes[15].numb:
+        notes[15].on();
+        break;
+        case keyCodes[16].numb:
+        notes[16].on();
+        break;
+        case keyCodes[17].numb:
+        notes[17].on();
+        break;
+        case keyCodes[18].numb:
+        notes[18].on();
+        break;
+        case keyCodes[19].numb:
+        notes[19].on();
+        break;
+        case keyCodes[20].numb:
+        notes[20].on();
+        break;
+        case keyCodes[21].numb:
+        notes[21].on();
+        break;
+        case keyCodes[22].numb:
+        notes[22].on();
+        break;
+        case keyCodes[23].numb:
+        notes[23].on();
+        break;
+        case keyCodes[24].numb:
+        notes[24].on();
+        break;
+        case keyCodes[25].numb:
+        notes[25].on();
+        break;
+		case 38:
+
+		break;
+		case 40:
+
+		break;
+    }
+});
+
+window.addEventListener('keyup', e => {
+    switch (e.keyCode) {
+		case keyCodes[0].numb:
+			notes[0].off();
+			break;
+			case keyCodes[1].numb:
+			notes[1].off();
+			break;
+			case keyCodes[2].numb:
+			notes[2].off();
+			break;
+			case keyCodes[3].numb:
+			notes[3].off();
+			break;
+			case keyCodes[4].numb:
+			notes[4].off();
+			break;
+			case keyCodes[5].numb:
+			notes[5].off();
+			break;
+			case keyCodes[6].numb:
+			notes[6].off();
+			break;
+			case keyCodes[7].numb:
+			notes[7].off();
+			break;
+			case keyCodes[8].numb:
+			notes[8].off();
+			break;
+			case keyCodes[9].numb:
+			notes[9].off();
+			break;
+			case keyCodes[10].numb:
+			notes[10].off();
+			break;
+			case keyCodes[11].numb:
+			notes[11].off();
+			break;
+			case keyCodes[12].numb:
+			notes[12].off();
+			break;
+			case keyCodes[13].numb:
+			notes[13].off();
+			break;
+			case keyCodes[14].numb:
+			notes[14].off();
+			break;
+			case keyCodes[15].numb:
+			notes[15].off();
+			break;
+			case keyCodes[16].numb:
+			notes[16].off();
+			break;
+			case keyCodes[17].numb:
+			notes[17].off();
+			break;
+			case keyCodes[18].numb:
+			notes[18].off();
+			break;
+			case keyCodes[19].numb:
+			notes[19].off();
+			break;
+			case keyCodes[20].numb:
+			notes[20].off();
+			break;
+			case keyCodes[21].numb:
+			notes[21].off();
+			break;
+			case keyCodes[22].numb:
+			notes[22].off();
+			break;
+			case keyCodes[23].numb:
+			notes[23].off();
+			break;
+			case keyCodes[24].numb:
+			notes[24].off();
+			break;
+			case keyCodes[25].numb:
+			notes[25].off();
+			break;
+    }
+});
+
+
+
+
+
+    
   </script>
 </html>
