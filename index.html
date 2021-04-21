@@ -623,7 +623,15 @@ window.addEventListener('keydown', e => {
 	faceIndices[pitchTurner].innerText = eval(faceIndices[pitchTurner].textContent)+1;
 		break;
 		case 40:
-		console.log('down')
+	console.log(scale[eval(faceIndices[pitchTurner].textContent)-1])
+	console.log(typeof pitchTurner)
+	faceFractions[pitchTurner].innerText = scale[eval(faceIndices[pitchTurner]
+							  .textContent)-1].fraction;
+	faceDecimals[pitchTurner].innerText = scale[eval(faceIndices[pitchTurner]
+							 .textContent)-1].decimal;
+	faceFrequencies[pitchTurner].innerText = fundamental.value*
+	    eval(faceFractions[pitchTurner].textContent);
+	faceIndices[pitchTurner].innerText = eval(faceIndices[pitchTurner].textContent)-1;
 		break;
     }
 });
